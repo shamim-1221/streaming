@@ -1,0 +1,8 @@
+scala-sbt download
+enter sbt
+sbt package
+start-master.sh
+localhost:8080
+spark-worker.sh spark:...
+(in new terminal) nc –lk 9999
+spark-submit –class 'NetworkWordCount' –master 'spark://...' \target/scala-2.12/networkwordcount_2.12-1.0.0.jar
